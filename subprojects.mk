@@ -54,6 +54,13 @@ ws02/src/tuw_graph:
 ws02/src/tuw_nav2_planner:
 		git clone -b ros2 git@github.com:tuw-robotics/tuw_nav2_planner.git $@
 
+ws02/src/trajectory_planner:
+	git clone -b master git@github.com:JenSte/trajectory_planner.git $@
+	touch $@/standalone/COLCON_IGNORE
+	touch $@/trajectory_planner_msgs_ros1/COLCON_IGNORE
+	touch $@/trajectory_planner_plugin_ros1/COLCON_IGNORE
+	touch $@/trajectory_planner_tools_ros1/COLCON_IGNORE
+
 clone-ws00: \
 	ws00/src/teleop_tools \
 	ws00/src/slam_toolbox \
@@ -73,6 +80,7 @@ clone-ws02: \
 	ws02/src/tuw_nav2\
 	ws02/src/tuw_fake_localization\
 	ws02/src/tuw_graph\
-	ws02/src/tuw_nav2_planner  
+	ws02/src/tuw_nav2_planner \
+	ws02/src/trajectory_planner
 
 clone: clone-ws00 clone-ws01 clone-ws02

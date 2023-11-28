@@ -65,7 +65,8 @@ RUN apt-get install -y \
       tmuxinator       \
       vim              \
       wget             \
-      iputils-ping
+      iputils-ping     \
+      libfftw3-dev
 
  #  GUI tools
 RUN apt-get install  -y \
